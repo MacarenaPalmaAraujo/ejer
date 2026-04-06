@@ -2,7 +2,7 @@
 var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 console.log(meses);
 for (var i = 0; i < meses.length; i++) {
-    document.writeln("<p>" + meses[i] + "</p>");
+    document.writeln("<h1>" + meses[i] + "</h1>");
 }
 //Ejercicio 2
 var valores = [true, 5, false, "hola", "adios", 2];
@@ -85,10 +85,10 @@ document.writeln("<h2>" + resultado + "</h2>");
 //7
 function analizarTexto(cadena) {
     if (cadena === cadena.toUpperCase()) {
-        return "La frase está formada SOLO por MAYÚSCULAS.";
+        return "La frase está formada solo por MAYÚSCULAS.";
     } 
     else if (cadena === cadena.toLowerCase()) {
-        return "La frase está formada SOLO por minúsculas.";
+        return "La frase está formada solo por minúsculas.";
     } 
     else {
         return "La frase es una mezcla de Mayúsculas y Minúsculas.";
@@ -99,3 +99,20 @@ var resultado = analizarTexto(Texto);
 console.log(resultado);
 document.writeln("<h3>Resultado: " + resultado + "</h3>");
 //8
+function esPalindromo(cadena) {
+    var str = cadena.toLowerCase();
+    str = str.replaceAll(" ", "");
+    var ArrStr = str.split("");
+    var ArrStrR = [...ArrStr].reverse();
+    var strInvertida = ArrStrR.join("");
+    if (str === strInvertida) {
+        return "Es un palíndromo";
+    } else {
+        return "No es un palíndromo";
+    }
+}
+document.writeln("<h3>" + esPalindromo(frase) + "</h3>");
+//10
+function
+
+

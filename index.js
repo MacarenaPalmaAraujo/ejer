@@ -34,7 +34,7 @@ function mates(){
 
 }
 
-function comp(){
+function compa(){
 
     var numero1 = 5;
     var numero2 = 8;
@@ -78,7 +78,7 @@ console.log("Letra: ", letras[resultadoD]);
 }
 }
 
-function facto(){
+function factos(){
 
 var numero = prompt("Ingrese un número: ");
 let cuenta = 1;
@@ -91,7 +91,7 @@ console.log("Resultado: ", cuenta);
 
 }
 
-function eje6(params) {
+function ejercicio6(params) {
     let numero = prompt("");
     parpar(numero);
 }
@@ -106,7 +106,7 @@ else{
 
 }
 
-function exotic(){
+function exotico(){
 
 var algo = prompt("Ingrese algo (menos un número): ");
 
@@ -114,7 +114,7 @@ if(!isNaN(algo) || algo == null || algo == " " ){
 
     console.log("carente de juicio");
 
-}else{
+ }else{
     if(algo === algo.toUpperCase()){
         document.writeln("Está escrito con mayúsculas");
     }else if(algo === algo.toLowerCase()){
@@ -147,11 +147,51 @@ function dado(params){
     for(var i = 0; i <= 3600; i++){
         let dado1 = Math.floor(Math.random() * 6) + 1;
         let dado2 = Math.floor(Math.random() * 6) + 1;
-        let Sumita = dado1 + dado2;
-        arr[Sumita] = arr[Sumita] + 1
+        let Suma = dado1 + dado2;
+        arr[Suma] = arr[Suma] + 1
     }
 
     for(var i = 2; i <= 12; i++){
         console.log("El numero ", i, "salió: ", arr[i], "veces");
     }
 }
+
+function ejer9(){
+    let p1 = new Estudiante("juan", 30, "masculino", "1a");
+    console.log(p1.registrar());
+    p1.obtDetalles();
+}
+    function Persona(nombre, edad, genero){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+    }
+    Persona.prototype.obtDetalles = function(){
+        console.log(`nombre: ${this.nombre}, edad: ${this.edad}, genero: ${this.genero}`);
+
+    };
+
+    function Estudiante(nombre, edad, genero, curso, grupo){
+    Persona.call(this, nombre, edad, genero);
+    this.curso = curso;
+    this.grupo = grupo;
+    }
+    
+
+    Estudiante.prototype = Object.create(Persona.prototype);
+    Estudiante.prototype.constructor = Estudiante;
+    Estudiante.prototype.registrar = function(){
+     console.log(`${this.nombre} ha sido registrado en el curso ${this.curso}, grupo ${this.grupo}.`);
+    };
+    function Profesor(nombre, edad, asignatura, nivel){
+        Persona.call(this, nombre, edad, genero);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+    }
+    Profesor.prototype = object.create(Persona.prototype);
+    Profesor.prototype.constructor = Profesor;
+
+    Profesor.prototype.asignar = function(){
+        console.log(`asignado al Profesor ${this.nombre} esta en la signatura ${this.asignatura}, nivel ${this.nivel}.`);
+}
+
